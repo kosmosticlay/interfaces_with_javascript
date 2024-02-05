@@ -1,0 +1,232 @@
+:root {
+  --color-white: white;
+  --color-hover: rgb(208, 237, 255);
+}
+
+ul,
+li {
+  all: unset;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 1000px;
+  min-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__title {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* todo-form */
+.new-todo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.todo-form label {
+  display: block;
+  margin-bottom: 10px;
+  /* display: inline-block; */
+}
+
+.todo-form select {
+  width: 150px;
+  height: 32px;
+  font-size: 1.2rem;
+  margin-right: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-form button {
+  height: 32px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 70px;
+  height: 32px;
+}
+
+#todo-input {
+  width: 250px;
+  height: 32px;
+  margin-right: 5px;
+  padding: 0 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  /* transition: outline ease-in 100ms; */
+}
+#todo-input:focus {
+  outline: 1px solid rgba(16, 80, 255, 0.802);
+}
+
+/* todo-list-container */
+.todo-list-container {
+  width: 900px;
+  height: calc(100vh - 230px);
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-list-container > div {
+  width: 30%;
+  height: 100%;
+  overflow: scroll;
+  background-color: rgb(236, 236, 236);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.todo-list-container > div h2 {
+  margin: 20px 0 20px 0;
+  font-size: 18px;
+}
+.highlight {
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.highlight:after {
+  content: "";
+  width: 100%;
+  height: 13px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  z-index: -1;
+}
+
+.highlight-options:after {
+  background: rgb(235, 196, 196);
+}
+
+.highlight-today:after {
+  background: rgb(163, 187, 235);
+}
+
+.highlight-removed:after {
+  background: rgb(156, 202, 142);
+}
+
+/* category-item */
+.category-item {
+  position: relative;
+  padding-top: 5px;
+}
+.category-name {
+  width: content;
+  padding: 2px 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  font-size: 0.8rem;
+  border-bottom-right-radius: 5px;
+}
+
+.category-name__private {
+  background-color: rgb(0, 0, 203);
+}
+
+.category-name__work {
+  background-color: rgb(255, 89, 0);
+}
+
+.category-name__study {
+  background-color: rgb(0, 105, 14);
+}
+
+.category-name__rendezvous {
+  background-color: rgb(107, 0, 149);
+}
+
+.category-name__etc {
+  background-color: rgb(58, 58, 58);
+}
+
+.todo-removed__removed-list li > span {
+  text-decoration: line-through;
+}
+
+.todo-removed {
+  position: relative;
+}
+.removalBtn {
+  all: unset;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px;
+  cursor: pointer;
+  position: absolute;
+  top: 13px;
+  right: 20px;
+}
+
+.removalBtn:hover {
+  background-color: rgb(255, 199, 199);
+  color: white;
+}
+
+/* Dragula only */
+.dragula-container {
+  width: 80%;
+  height: 85%;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.dragula-container li {
+  width: 100%;
+  min-height: 50px;
+  margin: 2px 0;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  box-shadow: 1px 1px 1px;
+  background-color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dragula-container li:hover {
+  background-color: var(--color-hover);
+}
+
+.gu-mirror {
+  display: none;
+}
+
+.gu-transit {
+  opacity: 0.3;
+}
